@@ -1,0 +1,46 @@
+#product-info
+{
+    product-name: "qdbm";
+    version: "1.8.78";
+    original-source-location: "http://fallabs.com/qdbm/qdbm-1.8.78.tar.gz";
+    original-source-website: "http://fallabs.com/qdbm/";
+    license: "LGPL";
+    packager: "Rafael Rivera <rafael@withinwindows.com>";
+}
+
+default
+{
+    compiler: vc10;
+    sdk: sdk7.1;
+    platform: x86;
+ 
+    targets:
+    {
+      "dpmgr.exe",
+      "dptest.exe",
+      "dptsv.exe",
+      "crmgr.exe",
+      "crtest.exe",
+      "crtsv.exe",
+      "rlmgr.exe",
+      "rltest.exe",
+      "hvmgr.exe",
+      "hvtest.exe",
+      "cbtest.exe",
+      "cbcodec.exe",
+      "vlmgr.exe",
+      "vltest.exe",
+      "vltsv.exe",
+      "odmgr.exe",
+      "odtest.exe",
+      "odidx.exe"
+    };
+ 
+    build-command: @"
+      nmake /f VCmakefile all
+    ";
+ 
+    clean-command: @"
+      nmake /f VCmakefile clean
+    ";
+}
